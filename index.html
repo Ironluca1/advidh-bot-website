@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advidh Bot - Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Custom CSS: Discord Dark Theme -->
+    <style>
+        body {
+            background-color: #36393f;
+            color: #dcddde;
+            font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            background-color: #2f3136 !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .nav-link {
+            color: #b9bbbe !important;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #fff !important;
+        }
+        .carousel-item img {
+            border-radius: 12px;
+            object-fit: cover;
+            height: 300px;
+            width: 100%;
+        }
+        .carousel-caption {
+            background: rgba(0,0,0,0.7);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .card {
+            background-color: #40444b;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .card-title {
+            color: #fff;
+        }
+        .badge {
+            font-size: 0.9rem;
+        }
+        .tab-content {
+            background-color: #40444b;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #2f3136;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+        .btn-primary {
+            background-color: #5865f2;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #4752c4;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Advidh Bot</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#top-servers">Top Servers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#changelog">Changelog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tutorials">Tutorials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tos-tab">ToS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="container my-5 text-center">
+        <h1 class="display-4">Welcome to Advidh Bot</h1>
+        <p class="lead">The ultimate moderation & utility bot for whitelisted servers.</p>
+        <a href="https://discord.gg/ATXBKPwQAv" target="_blank" class="btn btn-primary btn-lg">Join Support Server</a>
+    </section>
+
+    <!-- Top 3 Servers Carousel -->
+    <section id="top-servers" class="container my-5">
+        <h2 class="text-center mb-4">Top 3 Largest Servers</h2>
+        <div id="serverCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
+                <!-- Server 1 -->
+                <div class="carousel-item active">
+                    <img src="https://cdn.discordapp.com/icons/123456789012345678/a_abc123.webp?size=256" class="d-block w-100" alt="Server 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Epic Gaming Hub</h5>
+                        <p><i class="fas fa-users"></i> 2,847 Members</p>
+                        <span class="badge bg-success">Whitelisted</span>
+                    </div>
+                </div>
+                <!-- Server 2 -->
+                <div class="carousel-item">
+                    <img src="https://cdn.discordapp.com/icons/987654321098765432/b_def456.webp?size=256" class="d-block w-100" alt="Server 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Chill Lounge</h5>
+                        <p><i class="fas fa-users"></i> 1,923 Members</p>
+                        <span class="badge bg-success">Whitelisted</span>
+                    </div>
+                </div>
+                <!-- Server 3 -->
+                <div class="carousel-item">
+                    <img src="https://cdn.discordapp.com/icons/555666777888999000/c_ghi789.webp?size=256" class="d-block w-100" alt="Server 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Dev Community</h5>
+                        <p><i class="fas fa-users"></i> 1,504 Members</p>
+                        <span class="badge bg-success">Whitelisted</span>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#serverCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#serverCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Changelog -->
+    <section id="changelog" class="container my-5">
+        <h2>Changelog</h2>
+        <div class="table-responsive">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Changes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>v2.1.0</td>
+                        <td>Oct 30, 2025</td>
+                        <td>Added slash commands, welcome messages, auto-role</td>
+                    </tr>
+                    <tr>
+                        <td>v2.0.0</td>
+                        <td>Sep 15, 2025</td>
+                        <td>Utility commands: ping, poll, avatar</td>
+                    </tr>
+                    <tr>
+                        <td>v1.5.0</td>
+                        <td>Aug 1, 2025</td>
+                        <td>Beta launch with whitelisting</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Tutorials -->
+    <section id="tutorials" class="container my-5">
+        <h2>Tutorials</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">How to Whitelist</h5>
+                        <ol>
+                            <li>Join support server</li>
+                            <li>Go to #whitelist</li>
+                            <li>Type: <code>,whitelist YOUR_ID</code></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Moderation</h5>
+                        <ul>
+                            <li><code>,ban @user</code></li>
+                            <li><code>,mute @user 60</code></li>
+                            <li><code>,kick @user</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ToS Tab (Bottom) -->
+    <section id="tos-tab" class="container my-5">
+        <ul class="nav nav-tabs" id="tosTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tos-tab" data-bs-toggle="tab" data-bs-target="#tos" type="button">Terms of Service</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="tosTabContent">
+            <div class="tab-pane fade show active" id="tos">
+                <h4 class="mt-3">Advidh Bot – Terms of Service</h4>
+                <p><small>Last updated: October 30, 2025</small></p>
+                <ol>
+                    <li><strong>Acceptance</strong>: By using the bot, you agree to these terms.</li>
+                    <li><strong>Usage</strong>: No spam, harassment, or illegal activity. Whitelist required.</li>
+                    <li><strong>Data</strong>: We collect server ID and command usage. No personal data sold.</li>
+                    <li><strong>Liability</strong>: Use at your own risk. No warranty.</li>
+                    <li><strong>Termination</strong>: We may remove access for violations.</li>
+                </ol>
+                <p class="mt-3">Contact support for questions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Advidh Bot | <a href="https://discord.gg/ATXBKPwQAv" target="_blank">Support</a> | <a href="#tos-tab">ToS</a></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
